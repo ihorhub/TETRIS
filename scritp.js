@@ -1,5 +1,5 @@
 let main = document.querySelector(".main");
-const scroeElem = document.getElementById("score");
+const scoreElem = document.getElementById("score");
 const levelElem = document.getElementById("level");
 const nextTetroElem = document.getElementById("next-tetro");
 const startBtn = document.getElementById("start");
@@ -36,27 +36,27 @@ let isPaused = true;
 let possibleLevels = {
   1: {
     scorePerLine: 10,
-    speed: 400,
+    speed: 500,
     nextLevelScore: 20,
   },
   2: {
     scorePerLine: 15,
-    speed: 300,
+    speed: 400,
     nextLevelScore: 500,
   },
   3: {
     scorePerLine: 20,
-    speed: 200,
+    speed: 300,
     nextLevelScore: 1000,
   },
   4: {
     scorePerLine: 30,
-    speed: 100,
+    speed: 200,
     nextLevelScore: 2000,
   },
   5: {
     scorePerLine: 50,
-    speed: 50,
+    speed: 100,
     nextLevelScore: Infinity,
   },
 };
@@ -216,7 +216,7 @@ function removeFullLines() {
       break;
   }
 
-  scroeElem.innerHTML = score;
+  scoreElem.innerHTML = score;
 
   if (score >= possibleLevels[currentLevel].nextLevelScore) {
     currentLevel++;
@@ -349,7 +349,7 @@ startBtn.addEventListener("click", (e) => {
   gameOver.style.display = "none";
 });
 
-scroeElem.innerHTML = score;
+scoreElem.innerHTML = score;
 levelElem.innerHTML = currentLevel;
 
 draw();
